@@ -1,7 +1,11 @@
 import datetime
 import logging
 
-from django.utils import simplejson
+try:
+    import json as simplejson
+except:
+    import django.utils.simplejson
+    
 from django.core.mail import mail_admins
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
