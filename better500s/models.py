@@ -3,6 +3,7 @@ import os
 from django.db import models
 from django.core.urlresolvers import reverse
 
+
 from better500s import BETTER_500_LOG_DIR, BETTER_500_UNCAUGHT_DIR
 
 class CaughtError(models.Model):
