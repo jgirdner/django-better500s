@@ -3,6 +3,7 @@ import os
 from django.db import models
 from django.core.urlresolvers import reverse
 
+from django.conf import settings
 
 from better500s import BETTER_500_LOG_DIR, BETTER_500_UNCAUGHT_DIR
 
@@ -10,7 +11,7 @@ class CaughtError(models.Model):
     """
     Object that represents a better 500 error.
     """
-    user = models.ForeignKey("auth.User", blank=True, null=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
     error_time = models.DateTimeField(blank=True, null=True)
 
     page_url = models.TextField(blank=True, null=True)
